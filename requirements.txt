@@ -1,2 +1,19 @@
 pandas~=1.4.2
 selenium~=4.1.5
+
+https://api.whatsapp.com/send/?phone=916360908831&text=Congratulations+on+having+attended+the+beautiful+Workshop+-+Goddess+by+Design+by+Puja+Puneet.%E2%9C%A8%0D%0A%0D%0AHere+is+a+badge+from+Puja+herself+as+an+acknowledgment+for+your+participation.%E2%98%80%0D%0A%0D%0ARemember+whatever+you+are+seeking+in+2022+is+seeking+you%21%0D%0A%0D%0ADo+share+what+was+the+one+thing+you+picked+up+from+the+masterclass%E2%98%BA%0D%0A%0D%0AYou+are+now+ready+for+your+greatness%E2%9C%8B%E2%9C%8C%0D%0A%0D%0AJust+in+case+you+missed+attending+the+whole+thing%2C+here+is+the+link+to+register+again.+Would+love+to+support+you%E2%98%BA%0D%0AYour+link%3A+https%3A%2F%2Fwww.instamojo.com%2Finfo172%2Fdesign-your-life-live-workshop%2F%3Fdiscount%3Drajani%0D%0ACheers%2C%0D%0ADr.+Rajani+KS%0D%0ABig+Sister%0D%0ATeam+Puja+Puneet&app_absent=0
+
+https://web.whatsapp.com/send/?phone=916360908831&text=Congratulations+on+having+attended+the+beautiful+Workshop+-+Goddess+by+Design+by+Puja+Puneet.%E2%9C%A8%0A%0AHere+is+a+badge+from+Puja+herself+as+an+acknowledgment+for+your+participation.%E2%98%80%0A%0ARemember+whatever+you+are+seeking+in+2022+is+seeking+you%21%0A%0ADo+share+what+was+the+one+thing+you+picked+up+from+the+masterclass%E2%98%BA%0A%0AYou+are+now+ready+for+your+greatness%E2%9C%8B%E2%9C%8C%0A%0AJust+in+case+you+missed+attending+the+whole+thing%2C+here+is+the+link+to+register+again.+Would+love+to+support+you%E2%98%BA%0AYour+link%3A+https%3A%2F%2Fwww.instamojo.com%2Finfo172%2Fdesign-your-life-live-workshop%2F%3Fdiscount%3Drajani%0ACheers%2C%0ADr.+Rajani+KS%0ABig+Sister%0ATeam+Puja+Puneet
+
+html page resolution - 1536*720
+
+code in console
+document.onmousemove = function(e){
+var x = e.pageX;
+var y = e.pageY;
+e.target.title = "X is "+x+" and Y is "+y;
+};
+
+client id: 935675083124-3gidcre89o9em17b5jh6mqagu7rkoaec.apps.googleusercontent.com
+client secret: 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
+
