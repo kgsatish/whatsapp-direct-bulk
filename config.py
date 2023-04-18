@@ -3,7 +3,7 @@ import platform
 import logging
 import pymysql.cursors
 
-dbConnect = pymysql.connect(host='localhost',
+dbConnect = pymysql.connect(host='192.168.29.122',
                         user='rajani',
                         password='SuHaan7112',
                         database='whatsapp',
@@ -27,7 +27,7 @@ WAIT_TIME = 120
 CRED_FILE = r'credentials-biohub.json'
 # Scope for reading the google spreadsheet
 #SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly', 'https://www.googleapis.com/auth/drive.file', 'https://www.googleapis.com/auth/documents']
-SCOPES = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.scripts']
+SCOPES = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/calendar']
 
 # The ID and range of google spreadsheets with whatsapp message data.
 SESSION_REQ_ID = '1pGBoBmOzQAezLFoGjTIcQn96mMPDZY8ke36RJuuw9Lg'
@@ -58,9 +58,9 @@ VALID_PHONES = [
 ]
 
 SEND_MSG = 'N'
-PROCESS_TYPE = 'P'
+PROCESS_TYPE = 'E'
 
-SCRIPT_ID = 'AKfycbxRLaLfTPvE9NFP08VAxZn8gr7EL01c6j7JUA1hBTvmbZXgLpCupQ4BpGkr5AAGdg'
+SCRIPT_ID = 'AKfycbxsDXRGck-9xD6rmNM5MngRSA_sUe3bcmCrrtJ69K1VIL2e91KhExHKn2SZChs8JugZ'
 
 logging.basicConfig(
     filename='app.log', 
@@ -68,11 +68,5 @@ logging.basicConfig(
     format='%(asctime)s %(levelname)-8s [%(filename)s:%(lineno)d]: %(message)s',
     level=logging.INFO,
     datefmt='%Y-%m-%d %H:%M:%S')
-
-dbConn = pymysql.connect(host='192.168.29.122',
-                            user='rajani',
-                            password='SuHaan7112',
-                            database='whatsapp',
-                            cursorclass=pymysql.cursors.DictCursor)
 
 IMAGE_TEXT = 'join today ☝️'

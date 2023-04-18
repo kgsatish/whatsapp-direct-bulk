@@ -1138,12 +1138,12 @@ def batch_process():
             logging.error("Script error message: %s", error['errorMessage'])
             whatsappDB.close('N')
             return 1
-        else:
-            logging.info('script success message: %s', response['response'].get('result'))
-            logging.info(response)
-            whatsappDB.close('Y')
-            return 0
+
+        logging.info('script success message: %s', response['response'].get('result'))
+        logging.info(response)
+        whatsappDB.close('Y')
         logging.info('Exiting processSessions')
+        return 0
 
     def processEnrolments(service):
         logging.info('Entering processEnrolments')
@@ -1174,19 +1174,19 @@ def batch_process():
         
         for curColSet in enrolValues:
             logging.info(curColSet)
-            logging.info(curColSet[0])
             recdFormSbmTimeStr = curColSet[0]
+            logging.info(recdFormSbmTimeStr)
             formSbmTime = (datetime.fromisoformat(recdFormSbmTimeStr[:-1]+'000+00:00')).astimezone()
-            logging.info(curColSet[1])
             name = curColSet[1]
-            logging.info(curColSet[2])
+            logging.info(name)
             mobileNum = curColSet[2]
-            logging.info(curColSet[3])
+            logging.info(mobileNum)
             emailId = curColSet[3]
-            logging.info(curColSet[4])
+            logging.info(emailId)
             package = curColSet[4]
-            logging.info(curColSet[5])
+            logging.info(package)
             birthDayStr = curColSet[5]
+            logging.info(birthDayStr)
             # If birth day is below 1970, astimezone() does not work
             logging.info("birth day [%d]", int(birthDayStr[0:4]))
             if int(birthDayStr[0:4]) < 1970:
@@ -1195,35 +1195,37 @@ def batch_process():
                 birthDay = (datetime.fromisoformat(birthDayStr[:-1]+'000+00:00')).astimezone() + relativedelta(years=-diff)
             else:
                 birthDay = (datetime.fromisoformat(birthDayStr[:-1]+'000+00:00')).astimezone()
-            logging.info(curColSet[6])
             memStartDate = (datetime.fromisoformat(curColSet[6][:-1]+'000+00:00')).astimezone()
-            logging.info(curColSet[7])
+            logging.info(memStartDate)
             notes = curColSet[7]
-            logging.info(curColSet[8])
+            logging.info(notes)
             calendarId = curColSet[8]
-            logging.info(curColSet[9])
+            logging.info(calendarId)
             eventId = curColSet[9]
-            logging.info(curColSet[10])
+            logging.info(eventId)
             meetLink = curColSet[10]
-            logging.info(curColSet[11])
+            logging.info(meetLink)
             summary = curColSet[11]
-            logging.info(curColSet[12])
+            logging.info(summary)
             if curColSet[12] != '':
                 sesStartDateTime = (datetime.fromisoformat(curColSet[12][:-1]+'000+00:00')).astimezone()
             else:
                 sesStartDateTime = memStartDate
-            logging.info(curColSet[13])
+            logging.info(sesStartDateTime)
             message = curColSet[13]            
-            logging.info(curColSet[14])
+            logging.info(message)
             totPay = int(curColSet[14])            
-            logging.info(curColSet[15])
+            logging.info(totPay)
             frqPay = curColSet[15]
-            logging.info(curColSet[16])
+            logging.info(frqPay)
             numPay = int(curColSet[16])
-            logging.info(curColSet[17])
-            totalSessions = int(curColSet[18])
+            logging.info(numPay)
+            totalSessions = int(curColSet[17])
+            logging.info(totalSessions)
             sessionDuration = round(float(curColSet[18]), 1)
+            logging.info(sessionDuration)
             frqSes = curColSet[19]
+            logging.info(frqSes)
             logging.info("Enrolment Record details: [%s] [%s], Form Submitted time: [%s]", name, mobileNum, formSbmTime)
 
             existingRec = whatsappDB.enrolSelect(mobileNum)
@@ -1334,11 +1336,11 @@ def batch_process():
             logging.error("Script error message: %s", error['errorMessage'])
             whatsappDB.close('N')
             return 1
-        else:
-            logging.info("Script error message: %s", response['response'].get('result'))
-            whatsappDB.close('Y')
-            return 0
+
+        logging.info("Script error message: %s", response['response'].get('result'))
+        whatsappDB.close('Y')
         logging.info('Exiting processEnrolments')
+        return 0
 
     def processPayments(service):
         logging.info('Entering processPayments')
@@ -1484,12 +1486,12 @@ def batch_process():
             logging.error("Script error message: %s", error['errorMessage'])
             whatsappDB.close('N')
             return 1
-        else:
-            logging.info('script success message: %s', response['response'].get('result'))
-            logging.info(response)
-            whatsappDB.close('Y')
-            return 0
+
+        logging.info('script success message: %s', response['response'].get('result'))
+        logging.info(response)
+        whatsappDB.close('Y')
         logging.info('Exiting processPayments')
+        return 0
 
     # Batch processing starts here
     args = {}
